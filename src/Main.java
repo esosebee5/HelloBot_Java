@@ -8,12 +8,15 @@ public class Main {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
+        showLine("Welcome to the Java HelloBot Project!");
+        showLine("");
         show("Enter your name: ");
         name = getInputLine();
         showLine("Hello, " + name + ".");
+        showLine("");
 
         while (state) {
-            show("\nEnter '1' for Clock, '2' to Calculate Age, or\n" +
+            show("Enter '1' for Clock, '2' to Calculate Age, or\n" +
                     "enter 'end' to terminate: ");
             chooseProgram(getInputLine());
         }
@@ -21,11 +24,11 @@ public class Main {
 
     private static String getInputLine() {
         String in = input.nextLine();
-        showLine("");
         return in;
     }
 
     private static void chooseProgram(String in) {
+        showLine("");
         switch (in) {
             case "end":
                 endProgram();
@@ -52,7 +55,7 @@ public class Main {
         // get day
         int day = 0;
         while (day == 0) {
-            show("On what day of the month were you born? ");
+            show("Enter the day of the month: ");
             day = getPositiveInt();
         }
 
@@ -100,6 +103,7 @@ public class Main {
 
     private static void endApp() {
         showLine("--------------------------------");
+        showLine("");
     }
 
     private static int getPositiveInt() {
